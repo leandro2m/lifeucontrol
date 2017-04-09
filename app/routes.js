@@ -77,4 +77,18 @@ app.post('/api/data1', function (req, res, next) {
 
 })		
 
+app.get('/api/data/1/UCSCistern10', function(req, res, next) {
+        mongoose.model('Ws').find({"sensorid": "UCSCistern10"}, {}, { sort: { "datetime": -1}, limit: 10 }, function (err, ws) {
+              if (err) {
+                  return console.error(err);
+              } else {
+                  res.format({
+                    json: function(){
+                        res.json(ws);
+                    }
+                });
+              }     
+        });
+    })
+
 }
