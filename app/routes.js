@@ -93,8 +93,6 @@ app.get('/api/data/1/UCSCistern10', function(req, res, next) {
         });
     })
 
-// Post para status dos devices
-
 app.post('/api/monitor', function (req, res) {
     var clients = req.body
   

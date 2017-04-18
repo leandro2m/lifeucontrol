@@ -16,12 +16,12 @@ angular.module('App', ['ngResource','ui.bootstrap', 'ui.router', 'ui.navbar','ng
     .state('cisternaDash', {
       url: "/cisternaDash",
       templateUrl: "partials/cisternaDash.html",
-	  controller: 'cisternaDashCtrl'
+    controller: 'cisternaDashCtrl'
     })
-	.state('relatorio', {
+  .state('relatorio', {
       url: "/relatorio",
       templateUrl: "partials/relMensal2.html",
-	  controller: 'tableJsonCtrl3'
+    controller: 'tableJsonCtrl3'
     })
   .state('monitor', {
       url: "/Status",
