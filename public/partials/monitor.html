@@ -23,7 +23,8 @@
            <tr ng-repeat="item in items">
                 <td>{{item.name}}</td>
                 <td>{{item.ip}}</td>
-                <td>{{item.status}}</td>
+                <td ng-if = "item.status == 'Up'"><img ng-src="./images/up.png"></td>
+                <td ng-if = "item.status == 'Down'"><img ng-src="./images/down.png"></td>
                 <td>{{item.datetime}}
                 <td></td>
 
