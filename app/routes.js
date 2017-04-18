@@ -1,6 +1,8 @@
 var mongoose = require('mongoose'); //mongo connection
 var sensorData = require('./models/sensorschema');
 var gourmetData = require('./models/gourmetschema');
+var fs = require('fs');
+var jsonfile = require('jsonfile');
 
 module.exports = function(app) {
 
@@ -90,5 +92,35 @@ app.get('/api/data/1/UCSCistern10', function(req, res, next) {
               }     
         });
     })
+
+// Post para status dos devices
+
+app.post('/api/monitor', function (req, res) {
+    var clients = req.body
+  
+    filePath = "public/monitor.json";
+
+    fs.writeFile(filePath, JSON.stringify(clients), function(err){
+      if (err) {
+        return console.log(err);
+      }
+      res.send("File saved");
+    })
+  })  
+
+app.get('/api/monitor', function (req, res) {
+  
+  jsonfile.readFile('public/monitor.json', function(err,obj){
+    if (err) {
+      res.json({status:'error', reason: err.toString()});
+      return
+    }
+    res.json(obj)
+  }
+)
+
+
+})
+
 
 }

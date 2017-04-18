@@ -23,6 +23,11 @@ angular.module('App', ['ngResource','ui.bootstrap', 'ui.router', 'ui.navbar','ng
       templateUrl: "partials/relMensal2.html",
 	  controller: 'tableJsonCtrl3'
     })
+  .state('monitor', {
+      url: "/Status",
+      templateUrl: "partials/monitor.html",
+    controller: 'monitorCtrl'
+    })
 })
 
 .controller('NavigationController', function($scope) {
@@ -45,6 +50,14 @@ angular.module('App', ['ngResource','ui.bootstrap', 'ui.router', 'ui.navbar','ng
     subtree: [{
       name: "Cisterna - Bloco 10",
       link: "relatorio"
+    }]
+  },
+  {
+    name: "Status",
+    link: "#",
+    subtree: [{
+      name: "Monitoramento",
+      link: "monitor"
     }]
   },
   

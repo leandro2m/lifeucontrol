@@ -1,0 +1,35 @@
+<div ng-controller="monitorCtrl">
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6"> 
+        
+		  </div>
+ 	
+	</div>
+</div>
+
+    <div id="exportable">
+	<table class="table table-bordered table-striped" id="data-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>IP</th>
+                <th>Status</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr ng-repeat="item in items">
+                <td>{{item.name}}</td>
+                <td>{{item.ip}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.datetime}}
+                <td></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
