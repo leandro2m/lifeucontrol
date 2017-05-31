@@ -1,4 +1,3 @@
-<div ng-controller="monitorCtrl">
 
 <div class="container">
 	<div class="row">
@@ -20,6 +19,9 @@
             </tr>
         </thead>
         <tbody>
+            <tr ng-repeat="item1 in items1">
+                <td> {{item1.datetime}}</td>
+                <td>{{item1.ip}}</td> 
            <tr ng-repeat="item in items">
                 <td>{{item.name}}</td>
                 <td>{{item.ip}}</td>

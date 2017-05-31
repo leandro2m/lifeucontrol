@@ -1,0 +1,28 @@
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"    href="#/dash">uControl   </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+        <!--
+		<ul class="nav navbar-nav">
+		 -->
+		 <ul ng-show = "vm.isLoggedIn" class="nav navbar-nav">
+          <trees trees="vm.allMenuItens"></trees>
+        </ul>
+		<ul class="nav navbar-nav navbar-right">
+		    <!--
+			<li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Registre-se</a></li>
+			 -->
+	        <li ng-hide="vm.isLoggedIn"><a href="#/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            <li ng-show="vm.isLoggedIn"><a href="#profile">{{ vm.currentUser.email }}</a></li>		
+			<li ng-show="vm.isLoggedIn"><a href ="#logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+	   </ul>
+      </div>
+    </nav>

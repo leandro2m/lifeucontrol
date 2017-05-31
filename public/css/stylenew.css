@@ -24,19 +24,43 @@
  */
 
 .chart-wrapper {
-  background: #fff;
-  border: 1px solid #e2e2e2;
+  background: #D5F0FD;
+  /*border: 0px solid #e2e2e2;*/
   border-radius: 3px;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
+  align-content: all;
+  margin-right: 7px;
 }
 
 
 .chart-wrapper .chart-title {
   border-bottom: 1px solid #d7d7d7;
-  color: #666;
+  background: #fff;
+  color: white;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: bold;
   padding: 7px 10px 4px;
+  text-align: left;
+  display:auto;
+  background: #339AD2;
+}
+.chart-wrapper .eminstalacao {
+  /*border-bottom: 1px solid #d7d7d7;*/
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 7px 10px 4px;
+  text-align: left;
+  display:auto;
+  background: #339AD2;
+}
+.chart-wrapper .description {
+  /*border-bottom: 1px solid #d7d7d7;*/
+  color: #666;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 7px 10px 4px;
+  text-align: left;
 }
 
 .chart-wrapper .chart-stage {
@@ -62,7 +86,9 @@ transform: translateX(-50%);
 }
 
 .row > *{
-    padding-left: 20px !important;
+    /*padding-left: 20px !important;
+    padding-right: 20px*/
+    margin: auto;
 }
 
 .row+.row>* {
@@ -110,8 +136,6 @@ transform: translateX(-50%);
 
 
             }
-
-
 
 
 .background {
@@ -176,12 +200,41 @@ transform: translateX(-50%);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+.newcontainer {
+    display:flex;
+    background: #D5F0FD;
+}
+.sideleft {
+    width: 50%
+}
+.treewaters {
+    width: 33.3%
+}
+.cisterna {
+    width: 100%
+    background: #D5F0FD;
+}
+.mainpage {
+    background: #D5F0FD; 
+    margin: auto;
+}
+.description {
+    font-size: 12px;
+}
 
 h3 {
     margin: 0 0 10px 0;
     color: #616161;
 }
-
+h2 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+body {
+    background: #D5F0FD
+}
 .blueError {
     background: url(../img/blue-error.png) no-repeat #fff right 10px;
     border-color: #00adee;
@@ -311,6 +364,21 @@ input[type='submit']:hover {
 }
 a {
     color: #FFFFFF;
+}
+ .button {
+    background-color: #e7e7e7; /* Green */
+    text-align: center;
+    color: #777;
+    display: inline-block;
+    font-size: 14px;
+    border: 10px;
+    /*margin: 4px 2px;*/
+    float:right;
+    margin-right:10px;
+    cursor:pointer;
+    border-radius: 15px;
+
+
 }
 
   .userDetailsAlertBox{

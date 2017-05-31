@@ -1,6 +1,6 @@
 {
-  "name": "gestorh2o",
-  "description": "gestorh2o",
+  "name": "uctrl",
+  "description": "uctrl",
   "main": "server.js",
   "authors": [
     "Luis Filipe Silva <lfilipe.email@gmail.com>"
@@ -28,5 +28,8 @@
     "dcjs": "^2.1.4",
     "ui-navbar": "^0.5.2",
     "jquery": "1.12.4"
+  },
+  "resolutions": {
+    "angular": "1.5.8"
   }
 }
