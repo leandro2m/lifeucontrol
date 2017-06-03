@@ -104,7 +104,7 @@ queue()
 // Mostra gauges
 //Cisternas
 	 var gauge10c = loadLiquidFillGauge("fillgauge10c", lastVolC10, config10c);  //cisterna bloco 2
-     var gauge10r = loadLiquidFillGauge("fillgauge10r", lastVolR10, config10r); //cisterna bloco 5
+     //var gauge10r = loadLiquidFillGauge("fillgauge10r", lastVolR10, config10r); //cisterna bloco 5
      var fillbomba = document.getElementById('bomba').innerHTML = bomba;
 	
 };
