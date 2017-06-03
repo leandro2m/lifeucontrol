@@ -1,7 +1,7 @@
 angular.module('App').controller('caixaDash_bl10Ctrl', function($scope,$resource){
    
    queue()
-	  .defer(d3.json, "/api/data/1/UCSReserv1/bl10")
+	  .defer(d3.json, "/api/data/1/UCSReserv10/bl10")
 	  .await(renderData);
 	  
 function renderData(error,apiData) {
