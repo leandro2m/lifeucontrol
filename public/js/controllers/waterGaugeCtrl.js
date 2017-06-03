@@ -51,6 +51,8 @@ queue()
 	if (timeDim.top(1)[0] != null) {
 		var lastVolC10 = timeDim.top(1)[0].total;
 		var colorC10c = timeDim.top(1)[0].changecolor;
+		console.log("Utlimo volume cisterna" +lastVolC10)
+		console.log("Utlimo cor cisterna" +colorC10c)
 	}
 	else {
 		var lastVolC10 = 0;
@@ -84,8 +86,8 @@ queue()
 
 // Mostra gauges
 //Cisternas
-	 var gauge10c = loadLiquidFillGauge("fillgauge10c", lastVolC10,config10c);  //cisterna bloco 2
-     var gauge10r = loadLiquidFillGauge("fillgauge10r", lastVolR10,config10r); //cisterna bloco 5
+	 var gauge10c = loadLiquidFillGauge("fillgauge10c", lastVolC10, config10c);  //cisterna bloco 2
+     var gauge10r = loadLiquidFillGauge("fillgauge10r", lastVolR10, config10r); //cisterna bloco 5
 	
 };
 
