@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://localhost:8080/#/dash -->
+<html lang="en" ng-app="App" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>uControl - Residencial Life</title>
+  <!-- CSS 
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+  -->
+  <link data-require="bootstrap-css@3.3.7" data-semver="3.3.6" rel="stylesheet" href="./uControl - Residencial Life_files/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="./uControl - Residencial Life_files/stylenew.css">
+  <link rel="stylesheet" type="text/css" href="./uControl - Residencial Life_files/dc.css">
+  <link rel="stylesheet" type="text/css" href="./uControl - Residencial Life_files/ui-navbar.css">
+   <link href="./uControl - Residencial Life_files/font-awesome.min.css" rel="stylesheet">
+  <!--  
+  <link rel="stylesheet" type="text/css" href="css/leaflet.css"/>
+  <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    -->
+  <!-- JavaScript  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>   troquei por 1.12.4 abaixo
+  -->
+  
+  <!-- Favicon --> 
+  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:8080/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="http://localhost:8080/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="http://localhost:8080/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="http://localhost:8080/manifest.json">
+  <link rel="mask-icon" href="http://localhost:8080/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="http://localhost:8080/favicon.ico">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Instalado pelo Bower  --save --> 
+  <script src="./uControl - Residencial Life_files/jquery.min.js"></script>
+  <script src="./uControl - Residencial Life_files/bootstrap.min.js"></script>    
+  <script data-require="angular.js@1.5.8" data-semver="1.5.8" src="./uControl - Residencial Life_files/angular.js"></script>
+  <script data-require="angular-animate@1.5.8" data-semver="1.5.8" src="./uControl - Residencial Life_files/angular-animate.js"></script>
+  <script data-require="ui-bootstrap@2.5.0" data-semver="2.5.0" src="./uControl - Residencial Life_files/ui-bootstrap-tpls-2.5.0.js"></script>
+  <script data-require="ui-router@0.3.1" data-semver="0.3.1" src="./uControl - Residencial Life_files/angular-ui-router.js"></script>
+  <script src="./uControl - Residencial Life_files/angular-resource.js"></script>
+  <script src="./uControl - Residencial Life_files/d3.js" type="text/javascript"></script>
+  <script src="./uControl - Residencial Life_files/crossfilter.js" type="text/javascript"></script>
+  <script src="./uControl - Residencial Life_files/dc.js" type="text/javascript"></script>
+  <script src="./uControl - Residencial Life_files/ui-navbar.js"></script>
+  <script src="./uControl - Residencial Life_files/FileSaver.js" type="text/javascript"></script>
+  <script src="./uControl - Residencial Life_files/ngStorage.min.js"></script>
+  <script src="./uControl - Residencial Life_files/angular-messages.min.js"></script>
+    <script src="./uControl - Residencial Life_files/angular-sanitize.min.js"></script>
+   <!-- Not in Bower --save --> 
+
+  <script src="./uControl - Residencial Life_files/skel.min.js"></script>
+  <script src="./uControl - Residencial Life_files/skel-panels.min.js"></script>
+  <script src="./uControl - Residencial Life_files/queue.js" type="text/javascript"></script>
+  <script src="./uControl - Residencial Life_files/ngRadialGauge.js" type="text/javascript"></script> 
+     <!-- Meus scripts --save --> 
+  <script src="./uControl - Residencial Life_files/script.js"></script>
+  <script src="./uControl - Residencial Life_files/relbl10cCtrl.js"></script>
+  <script src="./uControl - Residencial Life_files/relbl10rCtrl.js"></script> 
+  
+  <script src="./uControl - Residencial Life_files/switchCtrl.js"></script>  
+  <script src="./uControl - Residencial Life_files/cisternaDash_bl10Ctrl.js"></script>
+  <script src="./uControl - Residencial Life_files/caixaDash_bl10Ctrl.js"></script>
+  
+  
+  <script src="./uControl - Residencial Life_files/RadialGaugeDemoCtrl.js"></script>
+  <script src="./uControl - Residencial Life_files/waterGaugeCtrl.js"></script>
+  <script src="./uControl - Residencial Life_files/waterGauge.js"></script>
+   <script src="./uControl - Residencial Life_files/auth.service.js"></script>
+  <script src="./uControl - Residencial Life_files/loginCtrl.js"></script>
+  <script src="./uControl - Residencial Life_files/registerCtrl.js"></script>
+  <script src="./uControl - Residencial Life_files/logoutCtrl.js"></script>
+  <script src="./uControl - Residencial Life_files/navbarCtrl.js"></script>
+  <script src="./uControl - Residencial Life_files/monitorCtrl.js"></script>
+
+	
+</head>
+<body>
+
+<!-- uiView: navbar --><div ui-view="navbar" class="ng-scope">    <nav class="navbar navbar-default ng-scope" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://localhost:8080/#/dash">uControl   </a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed &amp;&amp; &#39;in&#39;">
+        <!--
+		<ul class="nav navbar-nav">
+		 -->
+		 <ul ng-show="vm.isLoggedIn" class="nav navbar-nav">
+          <!-- ngRepeat: tree in trees --><li ng-repeat="tree in trees" class="dropdown ng-scope" uib-dropdown="" on-toggle="toggled(open)" ui-sref-active="active" trees="vm.allMenuItens">
+    <a href="http://localhost:8080/#" class="dropdown-toggle ng-binding" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Nivel Reservatório<span class="caret"></span></a>
+    <ul class="dropdown-menu ng-isolate-scope" uib-dropdown-menu="" tree="tree.subtree">
+    <!-- ngRepeat: leaf in tree --><li ng-class="{divider: leaf.name == &#39;divider&#39;}" ng-repeat="leaf in tree" leaf="leaf" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: leaf.name !== 'divider' --><a ui-sref="cisternaDash_bl10" ng-if="leaf.name !== &#39;divider&#39;" class="ng-binding ng-scope" href="http://localhost:8080/#/cisternaDash_bl10">Cisterna Bloco 10</a><!-- end ngIf: leaf.name !== 'divider' -->
+</li><!-- end ngRepeat: leaf in tree --><li ng-class="{divider: leaf.name == &#39;divider&#39;}" ng-repeat="leaf in tree" leaf="leaf" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: leaf.name !== 'divider' --><a ui-sref="caixaDash_bl10" ng-if="leaf.name !== &#39;divider&#39;" class="ng-binding ng-scope" href="http://localhost:8080/#/caixaDash_bl10">Caixa Bloco 10</a><!-- end ngIf: leaf.name !== 'divider' -->
+</li><!-- end ngRepeat: leaf in tree -->
+</ul>
+</li><!-- end ngRepeat: tree in trees --><li ng-repeat="tree in trees" class="dropdown ng-scope" uib-dropdown="" on-toggle="toggled(open)" ui-sref-active="active" trees="vm.allMenuItens">
+    <a href="http://localhost:8080/#" class="dropdown-toggle ng-binding" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Relatórios<span class="caret"></span></a>
+    <ul class="dropdown-menu ng-isolate-scope" uib-dropdown-menu="" tree="tree.subtree">
+    <!-- ngRepeat: leaf in tree --><li ng-class="{divider: leaf.name == &#39;divider&#39;}" ng-repeat="leaf in tree" leaf="leaf" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: leaf.name !== 'divider' --><a ui-sref="relbl10c" ng-if="leaf.name !== &#39;divider&#39;" class="ng-binding ng-scope" href="http://localhost:8080/#/relbl10c">Cisternas Bloco 10 </a><!-- end ngIf: leaf.name !== 'divider' -->
+</li><!-- end ngRepeat: leaf in tree --><li ng-class="{divider: leaf.name == &#39;divider&#39;}" ng-repeat="leaf in tree" leaf="leaf" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: leaf.name !== 'divider' --><a ui-sref="relbl10r" ng-if="leaf.name !== &#39;divider&#39;" class="ng-binding ng-scope" href="http://localhost:8080/#/relbl10r">Caixa Bloco 10</a><!-- end ngIf: leaf.name !== 'divider' -->
+</li><!-- end ngRepeat: leaf in tree -->
+</ul>
+</li><!-- end ngRepeat: tree in trees --><li ng-repeat="tree in trees" class="dropdown ng-scope" uib-dropdown="" on-toggle="toggled(open)" ui-sref-active="active" trees="vm.allMenuItens">
+    <a href="http://localhost:8080/#" class="dropdown-toggle ng-binding" uib-dropdown-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Monitoramento<span class="caret"></span></a>
+    <ul class="dropdown-menu ng-isolate-scope" uib-dropdown-menu="" tree="tree.subtree">
+    <!-- ngRepeat: leaf in tree --><li ng-class="{divider: leaf.name == &#39;divider&#39;}" ng-repeat="leaf in tree" leaf="leaf" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: leaf.name !== 'divider' --><a ui-sref="singlescreen" ng-if="leaf.name !== &#39;divider&#39;" class="ng-binding ng-scope" href="http://localhost:8080/#/singlescreen">Ampliar Tela</a><!-- end ngIf: leaf.name !== 'divider' -->
+</li><!-- end ngRepeat: leaf in tree --><li ng-class="{divider: leaf.name == &#39;divider&#39;}" ng-repeat="leaf in tree" leaf="leaf" class="ng-scope ng-isolate-scope">
+    <!-- ngIf: leaf.name !== 'divider' --><a ui-sref="monitor" ng-if="leaf.name !== &#39;divider&#39;" class="ng-binding ng-scope" href="http://localhost:8080/#/monitor">Status da Rede</a><!-- end ngIf: leaf.name !== 'divider' -->
+</li><!-- end ngRepeat: leaf in tree -->
+</ul>
+</li><!-- end ngRepeat: tree in trees -->
+        </ul>
+		<ul class="nav navbar-nav navbar-right">
+		    <!--
+			<li><a href="#/register"><span class="glyphicon glyphicon-user"></span> Registre-se</a></li>
+			 -->
+	        <li ng-hide="vm.isLoggedIn" class="ng-hide"><a href="http://localhost:8080/#/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            <li ng-show="vm.isLoggedIn" class=""><a href="http://localhost:8080/#profile" class="ng-binding">life@ucontrol.net.br</a></li>		
+			<li ng-show="vm.isLoggedIn" class=""><a href="http://localhost:8080/#logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+	   </ul>
+      </div>
+    </nav>
+</div>
+<!-- uiView: body --><div class="mainpage ng-scope" ui-view="body"><div id="wrapper" class="ng-scope">
+            <div id="header">
+            <a href="http://localhost:8080/#/singlescreen"><p style="text-align:right;"><button type="button" class="button">Ampliar</button></p></a> 
+            <br>
+                <div class="container"> 
+
+
+                    <div id="logo">
+                        <h2>Residencial Life</h2> 
+                    </div>
+                    
+                </div>
+            </div>
+    <div id="page" style="margin-top:40px;margin-left:10px">
+         <div class="container">
+            
+                    <div class="row">
+                
+                
+                    <div class="row">
+                    <div class="newcontainer">
+                    <div class="sideleft">
+                    
+                    <div class="cisterna">
+                            <div class="6u chart-wrapper">
+                            <div class="water-pump right bottom"><img src="./uControl - Residencial Life_files/waterpump.jpg" width="40" height="40">teste</div>
+
+
+                            <svg id="fillgauge10c" width="75%" height="150" onclick="window.location.href=&#39;#/&#39;">
+                            <g transform="translate(104,0)"><path d="M0,75A75,75 0 1,1 0,-75A75,75 0 1,1 0,75M0,67.5A67.5,67.5 0 1,0 0,-67.5A67.5,67.5 0 1,0 0,67.5Z" transform="translate(75,75)" style="fill: rgb(229, 58, 15);"></path><text class="liquidFillGaugeText" text-anchor="middle" font-size="37.5px" transform="translate(75,88.125)" style="fill: rgb(4, 86, 129);">0</text><defs><clippath id="clipWavefillgauge10c" transform="translate(-52.5,138.75)"><path d="M0,127.5L1.59375,127.5L3.1875,127.5L4.78125,127.5L6.375,127.5L7.96875,127.5L9.5625,127.5L11.15625,127.5L12.75,127.5L14.34375,127.5L15.9375,127.5L17.53125,127.5L19.125,127.5L20.71875,127.5L22.3125,127.5L23.90625,127.5L25.5,127.5L27.09375,127.5L28.6875,127.5L30.28125,127.5L31.875,127.5L33.46875,127.5L35.0625,127.5L36.65625,127.5L38.25,127.5L39.84375,127.5L41.4375,127.5L43.03125,127.5L44.625,127.5L46.21875,127.5L47.8125,127.5L49.40625000000001,127.5L51,127.5L52.59375000000001,127.5L54.1875,127.5L55.78125,127.5L57.375,127.5L58.96875,127.5L60.5625,127.5L62.15625,127.5L63.75,127.5L65.34375,127.5L66.9375,127.5L68.53125,127.5L70.125,127.5L71.71875,127.5L73.3125,127.5L74.90625,127.5L76.5,127.5L78.09375,127.5L79.6875,127.5L81.28125,127.5L82.875,127.5L84.46875,127.5L86.0625,127.5L87.65625,127.5L89.25,127.5L90.84375,127.5L92.4375,127.5L94.03125,127.5L95.625,127.5L97.21875,127.5L98.81250000000001,127.5L100.40625,127.5L102,127.5L103.59375,127.5L105.18750000000001,127.5L106.78125,127.5L108.375,127.5L109.96874999999999,127.5L111.5625,127.5L113.15625,127.5L114.75,127.5L116.34374999999999,127.5L117.9375,127.5L119.53125,127.5L121.125,127.5L122.71875000000001,127.5L124.3125,127.5L125.90625,127.5L127.5,127.5L129.09375,127.5L130.6875,127.5L132.28125,127.5L133.875,127.5L135.46875,127.5L137.0625,127.5L138.65625,127.5L140.25,127.5L141.84375,127.5L143.4375,127.5L145.03125,127.5L146.625,127.5L148.21875,127.5L149.8125,127.5L151.40625,127.5L153,127.5L154.59375,127.5L156.1875,127.5L157.78125,127.5L159.375,127.5L160.96875,127.5L162.5625,127.5L164.15625,127.5L165.75,127.5L167.34375,127.5L168.9375,127.5L170.53125,127.5L172.125,127.5L173.71875,127.5L175.3125,127.5L176.90625,127.5L178.5,127.5L180.09375,127.5L181.6875,127.5L183.28125,127.5L184.875,127.5L186.46875,127.5L188.0625,127.5L189.65625,127.5L191.25,127.5L191.25,0L189.65625,0L188.0625,0L186.46875,0L184.875,0L183.28125,0L181.6875,0L180.09375,0L178.5,0L176.90625,0L175.3125,0L173.71875,0L172.125,0L170.53125,0L168.9375,0L167.34375,0L165.75,0L164.15625,0L162.5625,0L160.96875,0L159.375,0L157.78125,0L156.1875,0L154.59375,0L153,0L151.40625,0L149.8125,0L148.21875,0L146.625,0L145.03125,0L143.4375,0L141.84375,0L140.25,0L138.65625,0L137.0625,0L135.46875,0L133.875,0L132.28125,0L130.6875,0L129.09375,0L127.5,0L125.90625,0L124.3125,0L122.71875000000001,0L121.125,0L119.53125,0L117.9375,0L116.34374999999999,0L114.75,0L113.15625,0L111.5625,0L109.96874999999999,0L108.375,0L106.78125,0L105.18750000000001,0L103.59375,0L102,0L100.40625,0L98.81250000000001,0L97.21875,0L95.625,0L94.03125,0L92.4375,0L90.84375,0L89.25,0L87.65625,0L86.0625,0L84.46875,0L82.875,0L81.28125,0L79.6875,0L78.09375,0L76.5,0L74.90625,0L73.3125,0L71.71875,0L70.125,0L68.53125,0L66.9375,0L65.34375,0L63.75,0L62.15625,0L60.5625,0L58.96875,0L57.375,0L55.78125,0L54.1875,0L52.59375000000001,0L51,0L49.40625000000001,0L47.8125,0L46.21875,0L44.625,0L43.03125,0L41.4375,0L39.84375,0L38.25,0L36.65625,0L35.0625,0L33.46875,0L31.875,0L30.28125,0L28.6875,0L27.09375,0L25.5,0L23.90625,0L22.3125,0L20.71875,0L19.125,0L17.53125,0L15.9375,0L14.34375,0L12.75,0L11.15625,0L9.5625,0L7.96875,0L6.375,0L4.78125,0L3.1875,0L1.59375,0L0,0Z" T="0.53925" transform="translate(34.3771875,0)"></path></clippath></defs><g clip-path="url(#clipWavefillgauge10c)"><circle cx="75" cy="75" r="63.75" style="fill: rgb(23, 139, 202);"></circle><text class="liquidFillGaugeText" text-anchor="middle" font-size="37.5px" transform="translate(75,88.125)" style="fill: rgb(164, 219, 248);">0</text></g></g></svg>
+                            </div>
+                            <div class="6u chart-wrapper">
+                            <div class="eminstalacao" style="text-align: center">Bloco 10-Cisterna</div>
+                            <div class="description">Capacidade ??? Litros<br>
+                            <span style="color:#E53A0F">Nível 3: Transbordo</span><br> 
+                            <span style="color:#008100">Nível 2: Normal</span><br>
+                            <span style="color:#FFCE00">Nível 1: Atenção</span><br>
+                            <span style="color:#E53A0F">Nível 0: Vazio</span><br>
+                            <span align="right">Status Bomba: </span><span id="bomba">DESLIGADA</span>
+                            </div>
+                            
+                    </div>
+        
+                    </div>
+                    </div>
+                    <div class="sideleft">
+                    <div class="cisterna">
+                            <div class="6u chart-wrapper">
+                            <svg id="fillgauge10r" width="75%" height="150" onclick="window.location.href=&#39;#/&#39;"><g transform="translate(104,0)"><path d="M0,75A75,75 0 1,1 0,-75A75,75 0 1,1 0,75M0,67.5A67.5,67.5 0 1,0 0,-67.5A67.5,67.5 0 1,0 0,67.5Z" transform="translate(75,75)" style="fill: rgb(229, 58, 15);"></path><text class="liquidFillGaugeText" text-anchor="middle" font-size="37.5px" transform="translate(75,88.125)" style="fill: rgb(4, 86, 129);">0</text><defs><clippath id="clipWavefillgauge10r" transform="translate(-52.5,138.75)"><path d="M0,127.5L1.59375,127.5L3.1875,127.5L4.78125,127.5L6.375,127.5L7.96875,127.5L9.5625,127.5L11.15625,127.5L12.75,127.5L14.34375,127.5L15.9375,127.5L17.53125,127.5L19.125,127.5L20.71875,127.5L22.3125,127.5L23.90625,127.5L25.5,127.5L27.09375,127.5L28.6875,127.5L30.28125,127.5L31.875,127.5L33.46875,127.5L35.0625,127.5L36.65625,127.5L38.25,127.5L39.84375,127.5L41.4375,127.5L43.03125,127.5L44.625,127.5L46.21875,127.5L47.8125,127.5L49.40625000000001,127.5L51,127.5L52.59375000000001,127.5L54.1875,127.5L55.78125,127.5L57.375,127.5L58.96875,127.5L60.5625,127.5L62.15625,127.5L63.75,127.5L65.34375,127.5L66.9375,127.5L68.53125,127.5L70.125,127.5L71.71875,127.5L73.3125,127.5L74.90625,127.5L76.5,127.5L78.09375,127.5L79.6875,127.5L81.28125,127.5L82.875,127.5L84.46875,127.5L86.0625,127.5L87.65625,127.5L89.25,127.5L90.84375,127.5L92.4375,127.5L94.03125,127.5L95.625,127.5L97.21875,127.5L98.81250000000001,127.5L100.40625,127.5L102,127.5L103.59375,127.5L105.18750000000001,127.5L106.78125,127.5L108.375,127.5L109.96874999999999,127.5L111.5625,127.5L113.15625,127.5L114.75,127.5L116.34374999999999,127.5L117.9375,127.5L119.53125,127.5L121.125,127.5L122.71875000000001,127.5L124.3125,127.5L125.90625,127.5L127.5,127.5L129.09375,127.5L130.6875,127.5L132.28125,127.5L133.875,127.5L135.46875,127.5L137.0625,127.5L138.65625,127.5L140.25,127.5L141.84375,127.5L143.4375,127.5L145.03125,127.5L146.625,127.5L148.21875,127.5L149.8125,127.5L151.40625,127.5L153,127.5L154.59375,127.5L156.1875,127.5L157.78125,127.5L159.375,127.5L160.96875,127.5L162.5625,127.5L164.15625,127.5L165.75,127.5L167.34375,127.5L168.9375,127.5L170.53125,127.5L172.125,127.5L173.71875,127.5L175.3125,127.5L176.90625,127.5L178.5,127.5L180.09375,127.5L181.6875,127.5L183.28125,127.5L184.875,127.5L186.46875,127.5L188.0625,127.5L189.65625,127.5L191.25,127.5L191.25,0L189.65625,0L188.0625,0L186.46875,0L184.875,0L183.28125,0L181.6875,0L180.09375,0L178.5,0L176.90625,0L175.3125,0L173.71875,0L172.125,0L170.53125,0L168.9375,0L167.34375,0L165.75,0L164.15625,0L162.5625,0L160.96875,0L159.375,0L157.78125,0L156.1875,0L154.59375,0L153,0L151.40625,0L149.8125,0L148.21875,0L146.625,0L145.03125,0L143.4375,0L141.84375,0L140.25,0L138.65625,0L137.0625,0L135.46875,0L133.875,0L132.28125,0L130.6875,0L129.09375,0L127.5,0L125.90625,0L124.3125,0L122.71875000000001,0L121.125,0L119.53125,0L117.9375,0L116.34374999999999,0L114.75,0L113.15625,0L111.5625,0L109.96874999999999,0L108.375,0L106.78125,0L105.18750000000001,0L103.59375,0L102,0L100.40625,0L98.81250000000001,0L97.21875,0L95.625,0L94.03125,0L92.4375,0L90.84375,0L89.25,0L87.65625,0L86.0625,0L84.46875,0L82.875,0L81.28125,0L79.6875,0L78.09375,0L76.5,0L74.90625,0L73.3125,0L71.71875,0L70.125,0L68.53125,0L66.9375,0L65.34375,0L63.75,0L62.15625,0L60.5625,0L58.96875,0L57.375,0L55.78125,0L54.1875,0L52.59375000000001,0L51,0L49.40625000000001,0L47.8125,0L46.21875,0L44.625,0L43.03125,0L41.4375,0L39.84375,0L38.25,0L36.65625,0L35.0625,0L33.46875,0L31.875,0L30.28125,0L28.6875,0L27.09375,0L25.5,0L23.90625,0L22.3125,0L20.71875,0L19.125,0L17.53125,0L15.9375,0L14.34375,0L12.75,0L11.15625,0L9.5625,0L7.96875,0L6.375,0L4.78125,0L3.1875,0L1.59375,0L0,0Z" T="0.539" transform="translate(34.361250000000005,0)"></path></clippath></defs><g clip-path="url(#clipWavefillgauge10r)"><circle cx="75" cy="75" r="63.75" style="fill: rgb(23, 139, 202);"></circle><text class="liquidFillGaugeText" text-anchor="middle" font-size="37.5px" transform="translate(75,88.125)" style="fill: rgb(164, 219, 248);">0</text></g></g></svg>
+                            </div>
+                            <div class="6u chart-wrapper">
+                            <div class="eminstalacao" style="text-align: center">Bloco 10-Caixa</div>
+                            <div class="description">Capacidade ??? Litros<br>
+                            <span style="color:#E53A0F">Nível 3: Transbordo</span><br> 
+                            <span style="color:#008100">Nível 2: Normal</span><br>
+                            <span style="color:#FFCE00">Nível 1: Atenção</span><br>
+                            <span style="color:#E53A0F">Nível 0: Vazio</span></div>
+                            
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                                         
+            </div>
+            
+        </div>  
+    </div>
+</div></div>
+
+
+</body></html>
