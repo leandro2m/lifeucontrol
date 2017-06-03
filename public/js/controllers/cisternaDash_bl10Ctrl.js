@@ -34,7 +34,7 @@ function renderData(error,apiData) {
 	var minDate = nd;
 	var maxDate = now;
     queue()
-	  .defer(d3.json, "/api/data/1/UCSCistern1/bl10")
+	  .defer(d3.json, "/api/data/1/UCSCistern10/bl10")
 	  .await(rD);
 	  
     function rD(error,apiData) {

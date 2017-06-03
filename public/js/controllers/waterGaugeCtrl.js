@@ -46,7 +46,7 @@ queue()
 	
 	// ultima leitura Cisterna Bloco 10
 	sensorDim.filterAll();
-	sensorDim.filter(function(d) {return d === 'UCSCistern1'});
+	sensorDim.filter(function(d) {return d === 'UCSCistern10'});
 	blocoDim.filter(function(d) {return d == 10});
 	if (timeDim.top(1)[0] != null) {
 		var lastVolC10 = timeDim.top(1)[0].total;
@@ -59,7 +59,7 @@ queue()
 	
 	// ultima leitura Caixa Bloco 10
 	sensorDim.filterAll();
-	sensorDim.filter(function(d) {return d === 'UCSReserv1'});
+	sensorDim.filter(function(d) {return d === 'UCSReserv10'});
 	blocoDim.filter(function(d) {return d == 10});
 	if (timeDim.top(1)[0] != null) {
 		var lastVolR10 = timeDim.top(1)[0].total;

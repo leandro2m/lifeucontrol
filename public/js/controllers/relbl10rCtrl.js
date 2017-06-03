@@ -9,7 +9,7 @@ angular.module('App').controller('relbl10rCtrl', function($scope,$resource){
 
 	$scope.items = [];
 	
-	var apiData = $resource('/api/data/1/UCSReserv1/bl2');
+	var apiData = $resource('/api/data/1/UCSReserv10/bl10');
 	function buscaData() {
 		apiData.query(
 			function(items) {		
