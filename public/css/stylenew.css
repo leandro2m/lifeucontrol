@@ -24,8 +24,8 @@
  */
 
 .chart-wrapper {
-  /*background: #D5F0FD;*/
-  background: #FFFFFF;
+  background: #D5F0FD;
+  /*background: #FFFFFF;*/
   border: 0px solid #e2e2e2;
   /*border-radius: 3px;*/
   /*margin-bottom: 10px;*/
@@ -33,7 +33,6 @@
   margin-right: 7px;
   margin-left: 7px;
 }
-
 
 .chart-wrapper .chart-title {
   border-bottom: 1px solid #d7d7d7;
@@ -58,6 +57,7 @@
 }
 .chart-wrapper .description {
   /*border-bottom: 1px solid #d7d7d7;*/
+  background: #FFFFFF;
   color: #666;
   font-size: 12px;
   font-weight: bold;
@@ -220,7 +220,7 @@ transform: translateX(-50%);
     background: #D5F0FD;
 }
 .bloco {
-    display:flex;
+    display:table-row-group;
     background: #D5F0FD;
     width: 100%;
     align-content: all;
@@ -244,7 +244,7 @@ transform: translateX(-50%);
     width: 25%
 }
 .cisterna {
-    width: 100%
+    width: 100%;
     background: #D5F0FD;
 }
 .cisterna-right {
@@ -271,6 +271,7 @@ transform: translateX(-50%);
 }
 .description {
     font-size: 12px;
+    background: white;
 }
 
 h3 {

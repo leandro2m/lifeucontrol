@@ -88,7 +88,6 @@ queue()
 		var bomba = "Offline";
 		
 	}
-		
 
 	var offlinecolor = "#E53A0F"
 
@@ -97,11 +96,11 @@ queue()
 	config10c.circleColor = colorC10c;	// The color of the outer circle.
 	//config1.waveColor = colorC1;	// The color of the 
 	
-	var config10r = liquidFillGaugeDefaultSettings();
-	config10r.circleColor = colorC10r; 	// The color of the outer circle.
+	//var config10r = liquidFillGaugeDefaultSettings();
+	//config10r.circleColor = colorC10r; 	// The color of the outer circle.
 	
 	//demo bloco 1
-	var config1c = liquidFillGaugeDefaultSettings();
+	/*var config1c = liquidFillGaugeDefaultSettings();
 	config1c.circleColor = offlinecolor
 	var config1r = liquidFillGaugeDefaultSettings();
 	//config1r.circeColor = offlinecolor
@@ -126,7 +125,7 @@ queue()
 	var config11c = liquidFillGaugeDefaultSettings();
 	var config11r = liquidFillGaugeDefaultSettings();
 	var config12c = liquidFillGaugeDefaultSettings();
-	var config12r = liquidFillGaugeDefaultSettings();
+	var config12r = liquidFillGaugeDefaultSettings();*/
 
 	
 
@@ -135,8 +134,8 @@ queue()
 // Mostra gauges
 //Cisternas
 	 var gauge10c = loadLiquidFillGauge("fillgauge10c", lastVolC10, config10c);  //cisterna bloco 10
-	 //var fillbomba = document.getElementById('bomba').innerHTML = bomba;
-     var gauge10r = loadLiquidFillGauge("fillgauge10r", 0, config10r); //caixa bloco 10
+	 var fillbomba = document.getElementById('bomba').innerHTML = bomba;
+     /*var gauge10r = loadLiquidFillGauge("fillgauge10r", 0, config10r); //caixa bloco 10
      var gauge1c = loadLiquidFillGauge("fillgauge1c", 0, config1c);
      var gauge1r = loadLiquidFillGauge("fillgauge1r", 0, config1r);
      var gauge2c = loadLiquidFillGauge("fillgauge2c", 0, config2c);
@@ -158,7 +157,7 @@ queue()
      var gauge11c = loadLiquidFillGauge("fillgauge11c", 0, config11c);
      var gauge11r = loadLiquidFillGauge("fillgauge11r", 0, config11r);
      var gauge12c = loadLiquidFillGauge("fillgauge12c", 0, config12c);
-     var gauge12r = loadLiquidFillGauge("fillgauge12r", 0, config12r);
+     var gauge12r = loadLiquidFillGauge("fillgauge12r", 0, config12r);*/
      
 
 
