@@ -23,7 +23,6 @@ router.post('/login', ctrlAuth.login);
 
 // reservoir Get
 router.get('/data', ctrlReservoir.rd_data);
-router.get('/data_last', ctrlReservoir.rd_data_last);
 // Rota para Water Gauge
 router.get('/data/1/latest', ctrlReservoir.rd_data_latest);
 //Rotas para Cisterna

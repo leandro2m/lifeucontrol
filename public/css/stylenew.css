@@ -44,6 +44,7 @@
   text-align: left;
   display:auto;
   background: #339AD2;
+  border-radius: 10px;
 }
 .chart-wrapper .eminstalacao {
   /*border-bottom: 1px solid #d7d7d7;*/
@@ -57,7 +58,6 @@
 }
 .chart-wrapper .description {
   /*border-bottom: 1px solid #d7d7d7;*/
-  background: #FFFFFF;
   color: #666;
   font-size: 12px;
   font-weight: bold;
@@ -271,7 +271,9 @@ transform: translateX(-50%);
 }
 .description {
     font-size: 12px;
-    background: white;
+}
+img {
+    width: 12%;
 }
 
 h3 {

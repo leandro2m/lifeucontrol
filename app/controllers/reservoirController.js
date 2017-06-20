@@ -5,8 +5,8 @@ var sensorData = require('../models/sensorschema');
 
 // pega aproximadamente as ultimas 12 horas pra capturar o ultimo registro de cada reservatório
 
-module.exports.rd_data_last = function(req, res,next) {
-    mongoose.model('Ws').find({}, {}, { sort: { "datetime": -1}, limit: 650 }, function (err, ws) { 
+module.exports.rd_data_latest = function(req, res,next) {
+          mongoose.model('Ws').find({}).sort({$natural: -1}).limit(60).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
@@ -18,28 +18,14 @@ module.exports.rd_data_last = function(req, res,next) {
               }     
         });
     }
-
 // pega todos os registros de cisterna dos ultimos 15 dias pra fazer o grafico
 
-module.exports.rd_data_c = function(req, res,next) {
-    mongoose.model('Ws').find({ 'sensorid': 'ucs_c' }, {}, { sort: { "datetime": -1}, limit: 3000 }, function (err, ws) { 
-              if (err) {
-                  return console.error(err);
-              } else {
-                  res.format({
-                    json: function(){
-                        res.json(ws);
-                    }
-                });
-              }     
-        });
-    } 
 
   
 // pega toda a base de dados de reservatório, usado pra rotina de relatórios
 
 module.exports.rd_data = function(req, res,next) {
-        mongoose.model('Ws').find( {} , function (err, ws) {
+        mongoose.model('Ws').find( {}).sort({$natural: -1}).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
@@ -75,26 +61,11 @@ module.exports.wr_data = function(req, res,next) {
 
 } 
 
-module.exports.rd_data_latest = function(req, res,next) {
-//app.get('/api/data/1/latest', function(req, res, next) {
-        mongoose.model('Ws').find({$query:{}, $orderby: {"datetime": -1}, limit: 58 }, function (err, ws) {
-              if (err) {
-                  return console.error(err);
-              } else {
-                  res.format({
-                    json: function(){
-                        res.json(ws);
-                    }
-                });
-              }     
-        });
-    }
-
 
 //API Cisterna Bloco 10 - Residencial Life
 module.exports.rd_data_C10 = function(req, res,next) {
 //app.get('/api/data/1/UCSCistern1/bl2', function(req, res, next) {
-        mongoose.model('Ws').find({"sensorid": "UCSCistern10", "blocoid": "10"}, {}, { sort: { "datetime": -1} }, function (err, ws) {
+        mongoose.model('Ws').find({"sensorid": "UCSCistern10", "blocoid": "10"}).sort({$natural:-1}).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
@@ -107,9 +78,10 @@ module.exports.rd_data_C10 = function(req, res,next) {
         });
     }
 
+
 //API Caixa D Agua Bloco 10 - Residencial Life
 module.exports.rd_data_R1bl10 = function(req, res,next) {  
-        mongoose.model('Ws').find({"sensorid": "UCSReserv10", "blocoid": "10"}, {}, { sort: { "datetime": -1} }, function (err, ws) {
+        mongoose.model('Ws').find({"sensorid": "UCSReserv10", "blocoid": "10"}).sort({$natural:-1}).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
