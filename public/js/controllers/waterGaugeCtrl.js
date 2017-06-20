@@ -103,7 +103,7 @@ queue()
 
 
 	//status bomba
-	sensorDim.filterAll();
+	/*sensorDim.filterAll();
 	sensorDim.filter(function(d) {return d === 'UCSCistern10'});
 	blocoDim.filter(function(d) {return d == 10});
 	if (timeDim.top(1)[0] != null) {
@@ -112,9 +112,7 @@ queue()
 	else {
 		var bomba = "Offline";
 		
-	}
-
-	var offlinecolor = "#E53A0F"
+	}*/
 
 // Configura gaugues
 	var config10c = liquidFillGaugeDefaultSettings();
