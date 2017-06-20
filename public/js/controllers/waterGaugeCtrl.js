@@ -26,11 +26,11 @@ queue()
 	  divImgNetwork.appendChild(imgStatus);
 	};
 	if (diffHoras < 2) {
-		console.log("Diferença maior que 2 horas");
+		console.log("Diferença menor que 2 horas");
 		imgStatus.src = './images/online.png';
 	}
 	else {
-		console.log("Diferenca menor que 2 horas");
+		console.log("Diferenca maior que 2 horas");
 		imgStatus.src = './images/offline.png';
 	}
 	
