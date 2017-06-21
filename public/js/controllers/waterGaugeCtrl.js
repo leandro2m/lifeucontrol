@@ -174,7 +174,7 @@ queue()
 		data: [
 		{        
 			type: "pie",       
-			indexLabelFontFamily: "Garamond",       
+			indexLabelFontFamily: "Arial",       
 			indexLabelFontSize: 14,
 			indexLabel: "{label} {y}%",
 			startAngle:-20,      
