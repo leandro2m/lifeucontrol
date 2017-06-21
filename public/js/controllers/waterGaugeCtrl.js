@@ -175,7 +175,7 @@ queue()
 		{        
 			type: "pie",       
 			indexLabelFontFamily: "Garamond",       
-			indexLabelFontSize: 10,
+			indexLabelFontSize: 14,
 			indexLabel: "{label} {y}%",
 			startAngle:-20,      
 			showInLegend: false,
