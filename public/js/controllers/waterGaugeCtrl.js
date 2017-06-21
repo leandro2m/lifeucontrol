@@ -8,6 +8,7 @@ queue()
    //Start Transformations
 	var dataSet = apiData;
 	var dateFormat = d3.time.format("%m/%d/%Y %H:%M:%S");
+	console.log("Tamanho do array = " + dataSet.length)
 
 	//
 
@@ -33,18 +34,49 @@ queue()
 		console.log("Diferenca maior que 2 horas");
 		imgStatus.src = './images/offline.png';
 	}
-	
-	dataSet.forEach(function(d) {
-		d.datetime = dateFormat.parse(d.datetime);
-//		console.log(d.datetime);
-		/*if (d.level4 == 1) {
-			d.bomba = "LIGADA";
-            d.changecolor = "#E53A0F";
-			}
 
-		else if (d.level4 == 0) {
-			d.bomba = "DESLIGADA"
-		}*/
+	var countCistern10 = 0; //Cisterna 10;
+	var countCistern10_L0 = 0 // Level 0 Cisterna 10
+	var countCistern10_L1 = 0
+	var countCistern10_L2 = 0
+	var countCistern10_L3 = 0
+
+
+	console.log("Pega o primeiro indice : " + dataSet[0].sensorid)
+
+	for (var i = 0; i < dataSet.length; i++) {
+
+		if (dataSet[i].sensorid == "UCSCistern10") {
+			countCistern10 = countCistern10 + 1;
+			if (dataSet[i].level3 == 1){
+				countCistern10_L3 = countCistern10_L3 + 1;
+			} else if (dataSet[i].level2 == 1) {
+				countCistern10_L2 = countCistern10_L2 + 1;
+			} else if (dataSet[i].level1 == 1) {
+				countCistern10_L1 = countCistern10_L1 + 1;
+			} else countCistern10_L0 = countCistern10_L0 + 1;
+		}
+
+	}
+	/*console.log("Numero de Vezes que Cisterna10 apareceu: " + countCistern10);
+	console.log("Numero de Vezes que Cisterna Level 0 apareceu: " + countCistern10_L0);
+	console.log("Numero de Vezes que Cisterna Level 1 apareceu: " + countCistern10_L1);
+	console.log("Numero de Vezes que Cisterna Level 2 apareceu: " + countCistern10_L2);
+	console.log("Numero de Vezes que Cisterna Level 3 apareceu: " + countCistern10_L3); */
+
+	calculaPercentL0 = (countCistern10_L0/countCistern10) * 100;
+	calculaPercentL1 = (countCistern10_L1/countCistern10) * 100;
+	calculaPercentL2 = (countCistern10_L2/countCistern10) * 100;
+	calculaPercentL3 = (countCistern10_L3/countCistern10) * 100;
+
+	console.log("Percentual L0: " + calculaPercentL0);
+	console.log("Percentual L1: " + calculaPercentL1);
+	console.log("Percentual L2: " + calculaPercentL2);
+	console.log("Percentual L3: " + calculaPercentL3);
+	
+		dataSet.forEach(function(d) {
+		d.datetime = dateFormat.parse(d.datetime);
+		
 		if (d.level3 == 1) {
 			d.total = 3;
             d.changecolor = "#E53A0F";
@@ -60,14 +92,16 @@ queue()
 		 else {
 			d.total = 0;
             d.changecolor = "#E53A0F";
-		   }	
+		   }
 	});
+	
+
 	
 	//Cria Crossfilter
 	var ndx = crossfilter(dataSet);
 	
     // Cria as dimensões de tempo e de sensorId
-	var timeDim = ndx.dimension(function(d) {return new Date(d.datetime).getTime() });
+	var timeDim = ndx.dimension(function(d) {return new Date(d.datetime).getTime()});
 	var sensorDim = ndx.dimension(function(d) {return d.sensorid });
 	var blocoDim = ndx.dimension(function(d) {return d.blocoid });
 	
@@ -80,8 +114,6 @@ queue()
 	if (timeDim.top(1)[0] != null) {
 		var lastVolC10 = timeDim.top(1)[0].total;
 		var colorC10c = timeDim.top(1)[0].changecolor;
-		console.log("Utlimo volume cisterna" +lastVolC10)
-		console.log("Utlimo cor cisterna" +colorC10c)
 	}
 	else {
 		var lastVolC10 = 0;
@@ -117,75 +149,48 @@ queue()
 // Configura gaugues
 	var config10c = liquidFillGaugeDefaultSettings();
 	config10c.circleColor = colorC10c;	// The color of the outer circle.
-	//config1.waveColor = colorC1;	// The color of the 
 	
-	//var config10r = liquidFillGaugeDefaultSettings();
-	//config10r.circleColor = colorC10r; 	// The color of the outer circle.
-	
-	//demo bloco 1
-	/*var config1c = liquidFillGaugeDefaultSettings();
-	config1c.circleColor = offlinecolor
-	var config1r = liquidFillGaugeDefaultSettings();
-	//config1r.circeColor = offlinecolor
-	//demo bloco 2
-	var config2c = liquidFillGaugeDefaultSettings();
-	//config2c.circleColor = offlinecolor
-	var config2r = liquidFillGaugeDefaultSettings();
-	var config3c = liquidFillGaugeDefaultSettings();
-	var config3r = liquidFillGaugeDefaultSettings();
-	var config4c = liquidFillGaugeDefaultSettings();
-	var config4r = liquidFillGaugeDefaultSettings();
-	var config5c = liquidFillGaugeDefaultSettings();
-	var config5r = liquidFillGaugeDefaultSettings();
-	var config6c = liquidFillGaugeDefaultSettings();
-	var config6r = liquidFillGaugeDefaultSettings();
-	var config7c = liquidFillGaugeDefaultSettings();
-	var config7r = liquidFillGaugeDefaultSettings();
-	var config8c = liquidFillGaugeDefaultSettings();
-	var config8r = liquidFillGaugeDefaultSettings();
-	var config9c = liquidFillGaugeDefaultSettings();
-	var config9r = liquidFillGaugeDefaultSettings();
-	var config11c = liquidFillGaugeDefaultSettings();
-	var config11r = liquidFillGaugeDefaultSettings();
-	var config12c = liquidFillGaugeDefaultSettings();
-	var config12r = liquidFillGaugeDefaultSettings();*/
-
-	
-
-
 
 // Mostra gauges
 //Cisternas
 	 var gauge10c = loadLiquidFillGauge("fillgauge10c", lastVolC10, config10c);  //cisterna bloco 10
 	 //var fillbomba = document.getElementById('bomba').innerHTML = bomba;
-     /*var gauge10r = loadLiquidFillGauge("fillgauge10r", 0, config10r); //caixa bloco 10
-     var gauge1c = loadLiquidFillGauge("fillgauge1c", 0, config1c);
-     var gauge1r = loadLiquidFillGauge("fillgauge1r", 0, config1r);
-     var gauge2c = loadLiquidFillGauge("fillgauge2c", 0, config2c);
-     var gauge2r = loadLiquidFillGauge("fillgauge2r", 0, config2r);
-     var gauge3c = loadLiquidFillGauge("fillgauge3c", 0, config3c);
-     var gauge3r = loadLiquidFillGauge("fillgauge3r", 0, config3r);
-     var gauge4c = loadLiquidFillGauge("fillgauge4c", 0, config4c);
-     var gauge4r = loadLiquidFillGauge("fillgauge4r", 0, config4r);
-     var gauge5c = loadLiquidFillGauge("fillgauge5c", 0, config5c);
-     var gauge5r = loadLiquidFillGauge("fillgauge5r", 0, config5r);
-     var gauge6c = loadLiquidFillGauge("fillgauge6c", 0, config6c);
-     var gauge6r = loadLiquidFillGauge("fillgauge6r", 0, config6r);
-     var gauge7c = loadLiquidFillGauge("fillgauge7c", 0, config7c);
-     var gauge7r = loadLiquidFillGauge("fillgauge7r", 0, config7r);
-     var gauge8c = loadLiquidFillGauge("fillgauge8c", 0, config8c);
-     var gauge8r = loadLiquidFillGauge("fillgauge8r", 0, config8r);
-     var gauge9c = loadLiquidFillGauge("fillgauge9c", 0, config9c);
-     var gauge9r = loadLiquidFillGauge("fillgauge9r", 0, config9r);
-     var gauge11c = loadLiquidFillGauge("fillgauge11c", 0, config11c);
-     var gauge11r = loadLiquidFillGauge("fillgauge11r", 0, config11r);
-     var gauge12c = loadLiquidFillGauge("fillgauge12c", 0, config12c);
-     var gauge12r = loadLiquidFillGauge("fillgauge12r", 0, config12r);*/
-     
 
 
-	
+	 var chart = new CanvasJS.Chart("chartbl10",
+	{
+		backgroundColor: "#D5F0FD",
+		title:{
+			text: "Historico dos últimos 10 dias"
+		},
+                animationEnabled: true,
+		legend:{
+			verticalAlign: "center",
+			horizontalAlign: "right",
+			fontSize: 12,
+			fontFamily: "Helvetica"        
+		},
+		theme: "theme1",
+		data: [
+		{        
+			type: "pie",       
+			indexLabelFontFamily: "Garamond",       
+			indexLabelFontSize: 10,
+			indexLabel: "{label} {y}%",
+			startAngle:-20,      
+			showInLegend: false,
+			toolTipContent:"{legendText} {y}%",
+			dataPoints: [
+				{  y: calculaPercentL0, legendText:"Nível 0", label: "Vazio", color: "#E53A0F"},
+				{  y: calculaPercentL1, legendText:"Nível 1", label: "Baixo", color: "#FFA500" },
+				{  y: calculaPercentL2, legendText:"Nível 2", label: "Normal", color: "#008100"},
+				{  y: calculaPercentL3, legendText:"Nível 3" , label: "Transbordo", color:"#800080"}
+			]
+		}
+		]
+	});
+	chart.render();
+
 };
-
 });
 	

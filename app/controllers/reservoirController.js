@@ -6,7 +6,7 @@ var sensorData = require('../models/sensorschema');
 // pega aproximadamente as ultimas 12 horas pra capturar o ultimo registro de cada reservatório
 
 module.exports.rd_data_latest = function(req, res,next) {
-          mongoose.model('Ws').find({}).sort({$natural: -1}).limit(60).exec(function (err, ws) {
+          mongoose.model('Ws').find({}).sort({$natural: -1}).limit(150).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
