@@ -79,7 +79,7 @@ queue()
 		
 		if (d.level3 == 1) {
 			d.total = 3;
-            d.changecolor = "#E53A0F";
+            d.changecolor = "#800080";
 			}
 		else if (d.level2 == 1) {
 			d.total = 2;
@@ -117,7 +117,7 @@ queue()
 	}
 	else {
 		var lastVolC10 = 0;
-		var colorC10c =  "#E53A0F";
+		var colorC10c =  "#800080";
 	}
 	
 	// ultima leitura Caixa Bloco 10
@@ -130,7 +130,7 @@ queue()
 	}
 	else {
 		var lastVolR10 = 0;
-		var colorC10r =  "#E53A0F";
+		var colorC10r =  "#800080";
 	}
 
 
