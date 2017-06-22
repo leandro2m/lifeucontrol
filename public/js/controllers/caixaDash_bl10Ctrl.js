@@ -59,16 +59,16 @@ function makeGraphs(apiData,minDate,maxDate){
 			d.total = 100;
 			} 
 		else if (d.level3 == 1) {
-			d.total = 90;
+			d.total = 3;
 			}
 		else if (d.level2 == 1) {
-			d.total = 50;
+			d.total = 2;
 			}
 		else if (d.level1 == 1) {
-			d.total = 20;
+			d.total = 1;
 			}	
 		 else {
-			d.total = 10;
+			d.total = 0;
 		}	
 	});
 
@@ -107,14 +107,14 @@ function makeGraphs(apiData,minDate,maxDate){
 		.group(wLevel, "Nível da Água")
 		.renderArea(true)
 		.x(d3.time.scale().domain([minD, maxD]))
-		.y(d3.scale.linear().domain([0, 100]))
+		.y(d3.scale.linear().domain([0, 3]))
 		.elasticY(false)
 		.elasticX(false)
 		.renderHorizontalGridLines(true)
     	.renderVerticalGridLines(true)
 		.brushOn(true)
 		.xAxisLabel("Data")
-		.yAxisLabel("% Volume da Cisterna") 
+		.yAxisLabel("Niveis") 
 		.ordinalColors(['blue'])
 		.yAxis().ticks(10);
 

@@ -25,9 +25,6 @@ angular
 		subtree: [{
 		  name: "Cisterna Bloco 10",
 		  link: "cisternaDash_bl10"
-		}, {
-		  name: "Caixa Bloco 10",
-		  link: "caixaDash_bl10"
 		}
 		 ]
 	  }, 
@@ -38,9 +35,6 @@ angular
 		subtree: [{
 		  name: "Cisternas Bloco 10 ",
 		  link: "relbl10c"
-		},{
-		  name: "Caixa Bloco 10",
-		  link: "relbl10r"
 		}
 		]
 	  },
@@ -67,10 +61,10 @@ angular
 		subtree: [{
 		  name: "Ampliar Tela",
 		  link: "singlescreen"
-		},{  
+		}/*,{  
 			name: "Status da Rede",
 			link: "monitor"
-		}
+		}*/
 		]
 	}
 	
