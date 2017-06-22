@@ -64,10 +64,10 @@ queue()
 	console.log("Numero de Vezes que Cisterna Level 2 apareceu: " + countCistern10_L2);
 	console.log("Numero de Vezes que Cisterna Level 3 apareceu: " + countCistern10_L3); */
 
-	calculaPercentL0 = (countCistern10_L0/countCistern10) * 100;
-	calculaPercentL1 = (countCistern10_L1/countCistern10) * 100;
-	calculaPercentL2 = (countCistern10_L2/countCistern10) * 100;
-	calculaPercentL3 = (countCistern10_L3/countCistern10) * 100;
+	calculaPercentL0 = Math.ceil((countCistern10_L0/countCistern10) * 100);
+	calculaPercentL1 = Math.ceil((countCistern10_L1/countCistern10) * 100);
+	calculaPercentL2 = Math.ceil((countCistern10_L2/countCistern10) * 100);
+	calculaPercentL3 = Math.ceil((countCistern10_L3/countCistern10) * 100);
 
 	console.log("Percentual L0: " + calculaPercentL0);
 	console.log("Percentual L1: " + calculaPercentL1);
