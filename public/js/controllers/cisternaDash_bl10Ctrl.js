@@ -55,7 +55,10 @@ function makeGraphs(apiData,minDate,maxDate){
 	dataSet.forEach(function(d) {
 		d.datetime = dateFormat.parse(d.datetime);
 		d.month = monthFormat(d.datetime);
-		if (d.level3 == 1) {
+		if (d.level4 == 1) {
+			d.total = 4;
+			}
+		else if (d.level3 == 1) {
 			d.total = 3;
 			}
 		else if (d.level2 == 1) {
@@ -104,7 +107,7 @@ function makeGraphs(apiData,minDate,maxDate){
 		.group(wLevel, "Nível da Água")
 		.renderArea(true)
 		.x(d3.time.scale().domain([minD, maxD]))
-		.y(d3.scale.linear().domain([0, 3]))
+		.y(d3.scale.linear().domain([0, 4]))
 		.elasticY(false)
 		.elasticX(false)
 		.renderHorizontalGridLines(true)
