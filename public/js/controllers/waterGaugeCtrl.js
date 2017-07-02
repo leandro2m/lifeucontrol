@@ -93,7 +93,7 @@ queue()
 			}
 		else if (d.level2 == 1) {
 			d.total = 2;
-            d.changecolor = "#008100";
+            d.changecolor = "#178BCA";
 			}
 		else if (d.level1 == 1) {
 			d.total = 1;
@@ -193,7 +193,7 @@ queue()
 			dataPoints: [
 				{  y: calculaPercentL0, legendText:"Vazio", label: "Vazio", color: "#E53A0F"},
 				{  y: calculaPercentL1, legendText:"Baixo", label: "Baixo", color: "#FFA500" },
-				{  y: calculaPercentL2, legendText:"Medio", label: "Medio", color: "#008100"},
+				{  y: calculaPercentL2, legendText:"Medio", label: "Medio", color: "#178BCA"},
 				{  y: calculaPercentL3, legendText:"Alto" , label: "Alto", color:"#008100"},
 				{  y: calculaPercentL4, legendText:"Transbordo" , label: "Transbordo", color:"#800080"}
 			]
