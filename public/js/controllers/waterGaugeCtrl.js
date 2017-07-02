@@ -40,6 +40,7 @@ queue()
 	var countCistern10_L1 = 0
 	var countCistern10_L2 = 0
 	var countCistern10_L3 = 0
+	var countCistern10_L4 = 0
 
 
 	console.log("Pega o primeiro indice : " + dataSet[0].sensorid)
@@ -48,9 +49,12 @@ queue()
 
 		if (dataSet[i].sensorid == "UCSCistern10") {
 			countCistern10 = countCistern10 + 1;
-			if (dataSet[i].level3 == 1){
+			if (dataSet[i].level4 == 1){
+				countCistern10_L4 = countCistern10_L4 + 1;
+			} else if (dataSet[i].level3 == 1) {
 				countCistern10_L3 = countCistern10_L3 + 1;
-			} else if (dataSet[i].level2 == 1) {
+			} 
+			else if (dataSet[i].level2 == 1) {
 				countCistern10_L2 = countCistern10_L2 + 1;
 			} else if (dataSet[i].level1 == 1) {
 				countCistern10_L1 = countCistern10_L1 + 1;
@@ -68,18 +72,24 @@ queue()
 	calculaPercentL1 = Math.ceil((countCistern10_L1/countCistern10) * 100);
 	calculaPercentL2 = Math.ceil((countCistern10_L2/countCistern10) * 100);
 	calculaPercentL3 = Math.ceil((countCistern10_L3/countCistern10) * 100);
+	calculaPercentL4 = Math.ceil((countCistern10_L4/countCistern10) * 100);
 
 	console.log("Percentual L0: " + calculaPercentL0);
 	console.log("Percentual L1: " + calculaPercentL1);
 	console.log("Percentual L2: " + calculaPercentL2);
 	console.log("Percentual L3: " + calculaPercentL3);
+	console.log("Percentual L4: " + calculaPercentL4);
 	
 		dataSet.forEach(function(d) {
 		d.datetime = dateFormat.parse(d.datetime);
 		
-		if (d.level3 == 1) {
-			d.total = 3;
+		if (d.level4 == 1) {
+			d.total = 4;
             d.changecolor = "#800080";
+			}
+		else if (d.level3 == 1) {
+			d.total = 3;
+            d.changecolor = "#008100";
 			}
 		else if (d.level2 == 1) {
 			d.total = 2;
@@ -181,10 +191,11 @@ queue()
 			showInLegend: false,
 			toolTipContent:"{legendText} {y}%",
 			dataPoints: [
-				{  y: calculaPercentL0, legendText:"Nível 0", label: "Vazio", color: "#E53A0F"},
-				{  y: calculaPercentL1, legendText:"Nível 1", label: "Baixo", color: "#FFA500" },
-				{  y: calculaPercentL2, legendText:"Nível 2", label: "Normal", color: "#008100"},
-				{  y: calculaPercentL3, legendText:"Nível 3" , label: "Transbordo", color:"#800080"}
+				{  y: calculaPercentL0, legendText:"Vazio", label: "Vazio", color: "#E53A0F"},
+				{  y: calculaPercentL1, legendText:"Baixo", label: "Baixo", color: "#FFA500" },
+				{  y: calculaPercentL2, legendText:"Medio", label: "Medio", color: "#008100"},
+				{  y: calculaPercentL3, legendText:"Alto" , label: "Alto", color:"#008100"},
+				{  y: calculaPercentL4, legendText:"Transbordo" , label: "Transbordo", color:"#800080"}
 			]
 		}
 		]

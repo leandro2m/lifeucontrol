@@ -23,7 +23,7 @@ function liquidFillGaugeDefaultSettings(){
  //       waveTextColor: "#A4DBf8" // The color of the value text when the wave overlaps it.
 //			
 	    minValue: 0, // The gauge minimum value.
-        maxValue: 3, // The gauge maximum value.
+        maxValue: 4, // The gauge maximum value.
         circleThickness: 0.1, // The outer circle thickness as a percentage of it's radius.
         circleFillGap: 0.05, // The size of the gap between the outer circle and wave circle as a percentage of the outer circles radius.
         circleColor: "#178BCA", // The color of the outer circle.
