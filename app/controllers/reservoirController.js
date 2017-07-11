@@ -6,7 +6,7 @@ var sensorData = require('../models/sensorschema');
 // pega aproximadamente as ultimas 12 horas pra capturar o ultimo registro de cada reservatório
 
 module.exports.rd_data_latest = function(req, res,next) {
-          mongoose.model('Ws').find({}).sort({"_id": -1}).limit(150).exec(function (err, ws) {
+          mongoose.model('Ws').find({}).sort({$natural:-1}).limit(150).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
@@ -25,7 +25,7 @@ module.exports.rd_data_latest = function(req, res,next) {
 // pega toda a base de dados de reservatório, usado pra rotina de relatórios
 
 module.exports.rd_data = function(req, res,next) {
-        mongoose.model('Ws').find( {}).sort({"_id": -1}).exec(function (err, ws) {
+        mongoose.model('Ws').find( {}).sort({$natural:-1}).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
@@ -65,7 +65,7 @@ module.exports.wr_data = function(req, res,next) {
 //API Cisterna Bloco 10 - Residencial Life
 module.exports.rd_data_C10 = function(req, res,next) {
 //app.get('/api/data/1/UCSCistern1/bl2', function(req, res, next) {
-        mongoose.model('Ws').find({"sensorid": "UCSCistern10", "blocoid": "10"}).sort({"_id": -1}).exec(function (err, ws) {
+        mongoose.model('Ws').find({"sensorid":"UCSCistern10","blocoid":"10"}).sort({$natural:-1}).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
@@ -81,7 +81,7 @@ module.exports.rd_data_C10 = function(req, res,next) {
 
 //API Caixa D Agua Bloco 10 - Residencial Life
 module.exports.rd_data_R1bl10 = function(req, res,next) {  
-        mongoose.model('Ws').find({"sensorid": "UCSReserv10", "blocoid": "10"}).sort({"_id": -1}).exec(function (err, ws) {
+        mongoose.model('Ws').find({"sensorid": "UCSReserv10", "blocoid": "10"}).sort({$natural:-1}).exec(function (err, ws) {
               if (err) {
                   return console.error(err);
               } else {
