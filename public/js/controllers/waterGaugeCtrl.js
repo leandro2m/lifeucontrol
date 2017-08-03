@@ -229,11 +229,11 @@ queue()
 	console.log("Ultima Leitura Pumper1: " + lastStatus1 + " horario: " + lastTime1)
 	if (pumpDim.top(1)[0].status == 0) {
 		console.log("nao tem agua Pumper1")
-		imgPump1.src = './images/waterpump-error.png';
+		imgPump1.src = './images/waterpump-error1.png';
 	}
 	else {
 		console.log("tem agua Pumper 1")
-		imgPump1.src = './images/waterpump-ok.png';
+		imgPump1.src = './images/waterpump-ok1.png';
 
 	}
 		
@@ -260,10 +260,10 @@ queue()
 
 	if (lastStatus2 == 0) {
 		console.log("nao tem agua Pumper 2")
-		imgPump2.src = './images/waterpump-error.png';
+		imgPump2.src = './images/waterpump-error1.png';
 	} else {
 		console.log("tem agua Pumper 2")
-		imgPump2.src = './images/waterpump-ok.png';
+		imgPump2.src = './images/waterpump-ok1.png';
 
 	}
 		
