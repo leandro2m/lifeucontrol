@@ -224,7 +224,7 @@ queue()
 	pumpId1 = datetimeDim.top(1)[0].pump;
 	lastStatus1 = datetimeDim.top(1)[0].status;
 
-	//console.log("Ultima Leitura: " + pumpId1 + " status: "  + lastStatus1 + " horario: " + lastTime1)
+	console.log("Ultima Leitura: " + pumpId1 + " status: "  + lastStatus1 + " horario: " + lastTime1)
 	if (lastStatus1 == 0) {
 		//console.log("nao tem agua Pumper1")
 		imgPump1.src = './images/waterpump-error1.png';
@@ -252,7 +252,7 @@ queue()
 
 	lastStatus2 = datetimeDim.top(1)[0].status
 	lastTime2 = datetimeDim.top(1)[0].datetime
-	//console.log("Ultima Leitura Pumper2: " + lastStatus2 + " horario: " + lastTime2)
+	console.log("Ultima Leitura Pumper2: " + lastStatus2 + " horario: " + lastTime2)
 
 	if (lastStatus2 == 0) {
 		//console.log("nao tem agua Pumper 2")
