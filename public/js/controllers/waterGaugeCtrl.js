@@ -217,6 +217,8 @@ queue()
 	var statusDim = ndx1.dimension(function(d) {return d.status });
 
 	//Filtra Bomba 1 do bloco 10
+	blocoidDim.filterAll();
+	pumpDim.filterAll();
 	blocoidDim.filter(function(d) {return d == 10})
 	pumpDim.filter(function(d) {return d === 'Pumper1'});
 
@@ -224,16 +226,16 @@ queue()
 	lastTime1 = datetimeDim.top(1)[0].datetime;
 
 
-		console.log("Ultima Leitura Pumper1: " + lastStatus1 + " horario: " + lastTime1)
-		if (lastStatus1 == 0) {
-			console.log("nao tem agua Pumper1")
-			imgPump1.src = './images/waterpump-error.png';
-		}
-		else if (lastStatus1 == 1) {
-			console.log("tem agua Pumper 1")
-			imgPump1.src = './images/waterpump-ok.png';
+	console.log("Ultima Leitura Pumper1: " + lastStatus1 + " horario: " + lastTime1)
+	if (pumpDim.top(1)[0].status == 0) {
+		console.log("nao tem agua Pumper1")
+		imgPump1.src = './images/waterpump-error.png';
+	}
+	else {
+		console.log("tem agua Pumper 1")
+		imgPump1.src = './images/waterpump-ok.png';
 
-		}
+	}
 		
 
 	
@@ -248,23 +250,22 @@ queue()
 	pumpDim.filterAll();
 	datetimeDim.filterAll();
 	blocoidDim.filterAll();
-	statusDim.filterAll();
-	blocoidDim.filter(10);
 	//Filtra Bomba 1 do bloco 10
+	blocoidDim.filter(function(d) {return d == 10})
 	pumpDim.filter(function(d) {return d === 'Pumper2'});
 
 	lastStatus2 = pumpDim.top(1)[0].status
 	lastTime2 = datetimeDim.top(1)[0].datetime
 	console.log("Ultima Leitura Pumper2: " + lastStatus2 + " horario: " + lastTime2)
 
-		if (lastStatus2 == 0) {
-			console.log("nao tem agua Pumper 2")
-			imgPump2.src = './images/waterpump-error.png';
-		} else {
-			console.log("tem agua Pumper 2")
-			imgPump2.src = './images/waterpump-ok.png';
+	if (lastStatus2 == 0) {
+		console.log("nao tem agua Pumper 2")
+		imgPump2.src = './images/waterpump-error.png';
+	} else {
+		console.log("tem agua Pumper 2")
+		imgPump2.src = './images/waterpump-ok.png';
 
-		}
+	}
 		
 	
 
