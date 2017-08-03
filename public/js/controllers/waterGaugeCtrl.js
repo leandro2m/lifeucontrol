@@ -220,24 +220,21 @@ queue()
 	blocoidDim.filter(function(d) {return d == 10})
 	pumpDim.filter(function(d) {return d === 'Pumper1'});
 
-	if (datetimeDim.top(1)[0] =! null) {
-		lastStatus1 = statusDim.top(1)[0].status
-		lastTime1 = datetimeDim.top(1)[0].datetime
-		console.log("Ultima Leitura Pumper1: " + lastStatus1 + "horario: " + lastTime1)
+	lastStatus1 = pumpDim.top(1)[0].status;
+	lastTime1 = datetimeDim.top(1)[0].datetime;
+
+
+		console.log("Ultima Leitura Pumper1: " + lastStatus1 + " horario: " + lastTime1)
 		if (lastStatus1 == 0) {
 			console.log("nao tem agua Pumper1")
 			imgPump1.src = './images/waterpump-error.png';
 		}
-		else {
+		else if (lastStatus1 == 1) {
 			console.log("tem agua Pumper 1")
 			imgPump1.src = './images/waterpump-ok.png';
 
 		}
 		
-	}
-	else {
-		console.log("Nenhuma leitura de bomba encontrada")
-	}
 
 	
 	//insere imagem Pump 2
@@ -256,9 +253,9 @@ queue()
 	//Filtra Bomba 1 do bloco 10
 	pumpDim.filter(function(d) {return d === 'Pumper2'});
 
-	lastStatus2 = statusDim.top(1)[0].status
+	lastStatus2 = pumpDim.top(1)[0].status
 	lastTime2 = datetimeDim.top(1)[0].datetime
-	console.log("Ultima Leitura Pumper2: " + lastStatus2 + "horario: " + lastTime2)
+	console.log("Ultima Leitura Pumper2: " + lastStatus2 + " horario: " + lastTime2)
 
 		if (lastStatus2 == 0) {
 			console.log("nao tem agua Pumper 2")
