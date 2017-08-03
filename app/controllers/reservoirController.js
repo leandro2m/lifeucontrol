@@ -41,7 +41,7 @@ module.exports.rd_data = function(req, res,next) {
 // post do registro de reservoir
 
 module.exports.wr_data = function(req, res,next) {
-    var sD= new sensorData();
+    var sD = new sensorData();
     sD.datetime = req.body.datetime;
     sD.condoid = req.body.condoid;
     sD.blocoid = req.body.blocoid;

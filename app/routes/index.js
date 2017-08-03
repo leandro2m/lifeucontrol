@@ -13,6 +13,7 @@ var ctrlGourmet = require('../controllers/gourmetController');
 var ctrlReservoir = require('../controllers/reservoirController');
 var ctrlSwitch = require('../controllers/switchController');
 var ctrlMonitor = require('../controllers/monitorController');
+var ctrlPump = require('../controllers/pumpController');
 
 // profile
 router.get('/profile', auth, ctrlProfile.profileRead);
@@ -36,6 +37,9 @@ router.get('/data/1/UCSReserv10/bl10', ctrlReservoir.rd_data_R1bl10); //Caixa D 
 router.get('/data/monitor', ctrlMonitor.rd_data_monitor); //Get arquivo JSON com resultado dos pings
 router.post('/data/monitor', ctrlMonitor.wr_data_monitor); //Post arquivo JSON com resultado dos pings
 
+//Get and post para Monitoramento das Bombas
+router.get('/data/pump', ctrlPump.rd_data); 
+router.post('/data/pump', ctrlPump.wr_data);
 
 // reservoir Post
 router.post('/data', ctrlReservoir.wr_data);
