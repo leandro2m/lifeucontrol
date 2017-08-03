@@ -6,7 +6,7 @@ var PumpSchema   = new mongoose.Schema({
     datetime: String,
     condoid: Number,
     blocoid: Number,
-	pumpid: Number,
+	pump: String,
 	status: Number
 },
 {collection : 'waterPump'}
