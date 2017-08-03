@@ -24,7 +24,7 @@ module.exports.wr_data = function(req, res,next) {
 		pump.datetime = req.body.datetime;
 		pump.condoid = req.body.condoid;
 		pump.blocoid = req.body.blocoid;
-		pump.pumpid = req.body.pumpid;
+		pump.pump = req.body.pump;
 		pump.status = req.body.status;
  
 		pump.save(function (err, post) {
