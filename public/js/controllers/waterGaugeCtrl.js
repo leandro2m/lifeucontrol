@@ -2,13 +2,16 @@ angular.module('App').controller('waterGaugeCtrl', function($scope,$resource){
 
 queue()
    .defer(d3.json, "/api/data/1/latest")
-   .await(displayTotals);
+   .defer(d3.json, "/api/data/pump")
+   .awaitAll(displayTotals);
    
      function displayTotals(error, apiData){
    //Start Transformations
-	var dataSet = apiData;
+	var dataSet = apiData[0];
+	var pumpData = apiData[1];
 	var dateFormat = d3.time.format("%m/%d/%Y %H:%M:%S");
 	console.log("Tamanho do array = " + dataSet.length)
+	console.log("Tamanho do array Bombas = " + pumpData.length)
 
 	//
 	lastpost = new Date(dataSet[0].datetime);
@@ -89,13 +92,13 @@ queue()
 	}
 	//total de entradas no array
 	var totalEntradasC10 = ndx.groupAll().reduceCount().value();
-	console.log("Total de Leituras: " + totalEntradasC10)
+	
 	sensorLevel1.filter(0);
 	sensorLevel2.filter(0);
 	sensorLevel3.filter(0);
 	sensorLevel4.filter(0);
 	var totalLevel0C10 = ndx.groupAll().reduceCount().value();
-	console.log("Quantidade de L0 C10 = 1: " +totalLevel0C10);
+	
 
 	//Filtra Qtdade Sensor Level 1
 
@@ -104,7 +107,7 @@ queue()
 	sensorLevel3.filter(0);
 	sensorLevel4.filter(0);
 	var totalLevel1C10 = ndx.groupAll().reduceCount().value();
-	console.log("Quantidade de L1 C10 = 1: "+ totalLevel1C10);
+	
 
 	//Filtra Qtade Sensor Level 2
 
@@ -113,7 +116,7 @@ queue()
 	sensorLevel3.filter(0);
 	sensorLevel4.filter(0);
 	var totalLevel2C10 = ndx.groupAll().reduceCount().value();
-	console.log("Quantidade de L2 C10 = 1: " +totalLevel2C10);
+	
 
 	//Filtra Sensor Level3
 	sensorLevel1.filter(1);
@@ -121,7 +124,7 @@ queue()
 	sensorLevel3.filter(1);
 	sensorLevel4.filter(0);
 	var totalLevel3C10 = ndx.groupAll().reduceCount().value();
-	console.log("Quantidade de L3 C10 = 1: "+totalLevel3C10)
+	
 
 	//Filtra Qtdade Sensor Level4
 
@@ -130,7 +133,7 @@ queue()
 	sensorLevel3.filter(1);
 	sensorLevel4.filter(1);
 	var totalLevel4C10 = ndx.groupAll().reduceCount().value();
-	console.log("Quantidade de L4 C10 = 1: "+totalLevel4C10);
+	
 
 	//Filtra Qtdade Sensor Level0
 
@@ -140,11 +143,7 @@ queue()
 	calculaPercentL3 = Math.ceil((totalLevel3C10/totalEntradasC10) * 100);
 	calculaPercentL4 = Math.ceil((totalLevel4C10/totalEntradasC10) * 100);
 
-	console.log("Percentual L0: " + calculaPercentL0);
-	console.log("Percentual L1: " + calculaPercentL1);
-	console.log("Percentual L2: " + calculaPercentL2);
-	console.log("Percentual L3: " + calculaPercentL3);
-	console.log("Percentual L4: " + calculaPercentL4);
+	
 
 
 // Configura gaugues
@@ -196,6 +195,86 @@ queue()
 	});
 	chart.render();
 	}
+
+
+
+
+	//insere imagem Pump 1
+	var imgPump1 = new Image();
+	var idPump1 = document.getElementById('pump1');
+	imgPump1.onload = function() {
+		idPump1.appendChild(imgPump1);
+	};
+	
+	//Filtra Leituras da Bomba Pumper1
+
+	var ndx1 = crossfilter(pumpData);
+	
+    // Cria as dimensões de tempo e de sensorId
+	var datetimeDim = ndx1.dimension(function(d) {return new Date(d.datetime).getTime()});
+	var blocoidDim = ndx1.dimension(function(d) {return d.blocoid });
+	var pumpDim = ndx1.dimension(function(d) {return d.pump });
+	var statusDim = ndx1.dimension(function(d) {return d.status });
+
+	//Filtra Bomba 1 do bloco 10
+	blocoidDim.filter(function(d) {return d == 10})
+	pumpDim.filter(function(d) {return d === 'Pumper1'});
+
+	if (datetimeDim.top(1)[0] =! null) {
+		lastStatus1 = statusDim.top(1)[0].status
+		lastTime1 = datetimeDim.top(1)[0].datetime
+		console.log("Ultima Leitura Pumper1: " + lastStatus1 + "horario: " + lastTime1)
+		if (lastStatus1 == 0) {
+			console.log("nao tem agua Pumper1")
+			imgPump1.src = './images/waterpump-error.png';
+		}
+		else {
+			console.log("tem agua Pumper 1")
+			imgPump1.src = './images/waterpump-ok.png';
+
+		}
+		
+	}
+	else {
+		console.log("Nenhuma leitura de bomba encontrada")
+	}
+
+	
+	//insere imagem Pump 2
+	var imgPump2 = new Image();
+	var idPump2 = document.getElementById('pump2');
+	imgPump2.onload = function() {
+		idPump2.appendChild(imgPump2);
+	};
+	
+	//Filtra Leituras da Bomba Pumper1
+	pumpDim.filterAll();
+	datetimeDim.filterAll();
+	blocoidDim.filterAll();
+	statusDim.filterAll();
+	blocoidDim.filter(10);
+	//Filtra Bomba 1 do bloco 10
+	pumpDim.filter(function(d) {return d === 'Pumper2'});
+
+	lastStatus2 = statusDim.top(1)[0].status
+	lastTime2 = datetimeDim.top(1)[0].datetime
+	console.log("Ultima Leitura Pumper2: " + lastStatus2 + "horario: " + lastTime2)
+
+		if (lastStatus2 == 0) {
+			console.log("nao tem agua Pumper 2")
+			imgPump2.src = './images/waterpump-error.png';
+		} else {
+			console.log("tem agua Pumper 2")
+			imgPump2.src = './images/waterpump-ok.png';
+
+		}
+		
+	
+
+
+
+
+
 
 };
 });
