@@ -6,7 +6,7 @@ var pumpData = require('../models/pumpschema');
 //gourmet collection APIs
 
 module.exports.rd_data = function(req, res,next) {
-        mongoose.model('Wp').find({}).sort({"datetime":-1}).limit(100).exec(function (err, wp) {
+        mongoose.model('Wp').find({}).sort({$natural: -1}).limit(100).exec(function (err, wp) {
               if (err) {
                   return console.error(err);
               } else {
