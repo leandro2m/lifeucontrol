@@ -10,18 +10,18 @@ queue()
 	var dataSet = apiData[0];
 	var pumpData = apiData[1];
 	var dateFormat = d3.time.format("%m/%d/%Y %H:%M:%S");
-	console.log("Tamanho do array = " + dataSet.length)
-	console.log("Tamanho do array Bombas = " + pumpData.length)
+	//console.log("Tamanho do array = " + dataSet.length)
+	//console.log("Tamanho do array Bombas = " + pumpData.length)
 
 	//
 	lastpost = new Date(dataSet[0].datetime);
-	console.log("Data do Ultimo Post " + lastpost)
+	//console.log("Data do Ultimo Post " + lastpost)
 	dataAtual = new Date();
-	console.log("Data e Hora atual " + dataAtual);
+	//console.log("Data e Hora atual " + dataAtual);
 
 	//calcula a diferença de datas em horas
 	var diffHoras = Math.abs(dataAtual.getTime() - lastpost.getTime()) / 3600000; 
-	console.log("Diferença de horas: " + diffHoras)
+	//console.log("Diferença de horas: " + diffHoras)
 
 	var imgStatus = new Image();
 	var divImgNetwork = document.getElementById('imgNetwork');
@@ -63,7 +63,6 @@ queue()
 		   }
 	});
 	
-
 	
 	//Cria Crossfilter
 	var ndx = crossfilter(dataSet);
@@ -85,6 +84,7 @@ queue()
 	if (timeDim.top(1)[0] != null) {
 		var lastVolC10 = timeDim.top(1)[0].total;
 		var colorC10c = timeDim.top(1)[0].changecolor;
+		console.log("Ultima leitura Bloco 10: " + lastVolC10 + " horario: " + timeDim.top(1)[0].datetime)
 	}
 	else {
 		var lastVolC10 = 0;
@@ -205,21 +205,33 @@ queue()
 	imgPump1.onload = function() {
 		idPump1.appendChild(imgPump1);
 	};
+
+	//insere imagem Pump 2
+	var imgPump2 = new Image();
+	var idPump2 = document.getElementById('pump2');
+	imgPump2.onload = function() {
+		idPump2.appendChild(imgPump2);
+	};
 	
 	//Filtra Leituras da Bomba Pumper1
 
+
+	
 	var ndx1 = crossfilter(pumpData);
 	
     // Cria as dimensões de tempo e de sensorId
-	var datetimeDim = ndx1.dimension(function(d) {return new Date(d.datetime).getTime()});
+	var datetimeDim = ndx1.dimension(function(d) {return d.datetime});
 	var blocoidDim = ndx1.dimension(function(d) {return d.blocoid });
 	var pumpDim = ndx1.dimension(function(d) {return d.pump });
 	var statusDim = ndx1.dimension(function(d) {return d.status });
 
-	//Filtra Bomba 1 do bloco 10
-	blocoidDim.filter(function(d) {return d == 10})
-	pumpDim.filter(function(d) {return d === 'Pumper1'});
+	console.log( "Ultima leitura da API Bomba: " + datetimeDim.top(1)[0].datetime)
 
+	//Filtra Bomba 1
+	//blocoidDim.filter(function(d) {return d == 10})
+	//pumpDim.filter(function(d) {return d === 'Pumper1'});
+
+	pumpDim.filterExact("Pumper1");
 	lastTime1 = datetimeDim.top(1)[0].datetime;
 	pumpId1 = datetimeDim.top(1)[0].pump;
 	lastStatus1 = datetimeDim.top(1)[0].status;
@@ -234,25 +246,19 @@ queue()
 		imgPump1.src = './images/waterpump-ok1.png';
 	}
 	
-	//insere imagem Pump 2
-	var imgPump2 = new Image();
-	var idPump2 = document.getElementById('pump2');
-	imgPump2.onload = function() {
-		idPump2.appendChild(imgPump2);
-	};
 	
-	//Filtra Leituras da Bomba Pumper1
+	//Filtra Leituras da Bomba Pumper2
+
 	pumpDim.filterAll();
 	datetimeDim.filterAll();
 	blocoidDim.filterAll();
 	//Filtra Bomba 1 do bloco 10
-	blocoidDim.filter(function(d) {return d == 10})
-	pumpDim.filter(function(d) {return d === 'Pumper2'});
-
+	pumpDim.filterExact("Pumper2");
 
 	lastStatus2 = datetimeDim.top(1)[0].status
 	lastTime2 = datetimeDim.top(1)[0].datetime
-	console.log("Ultima Leitura Pumper2: " + lastStatus2 + " horario: " + lastTime2)
+	pumpId2 = datetimeDim.top(1)[0].pump;
+	console.log("Ultima Leitura: " + pumpId2 + " Status: "+ lastStatus2 + " horario: " + lastTime2)
 
 	if (lastStatus2 == 0) {
 		//console.log("nao tem agua Pumper 2")
