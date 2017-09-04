@@ -7,7 +7,8 @@ var PumpSchema   = new mongoose.Schema({
     condoid: Number,
     blocoid: Number,
 	pump: String,
-	status: Number
+	status: Number,
+	actuation: Number
 },
 {collection : 'waterPump'}
 );

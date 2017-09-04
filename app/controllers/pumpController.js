@@ -26,6 +26,7 @@ module.exports.wr_data = function(req, res,next) {
 		waterpump.blocoid = req.body.blocoid;
 		waterpump.pump = req.body.pump;
 		waterpump.status = req.body.status;
+    waterpump.actuation = req.body.actuation;
  
 		waterpump.save(function (err, post) {
 			if (err) { return next(err) }
